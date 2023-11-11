@@ -1,15 +1,30 @@
 from PIL import Image
 def open_image(image_location):
     img = Image.open(image_location) # path
-    width = img.size[0]
-    height = img.size[1]
+    width, height = img.size[0], img.size[1]
+    NewW, NewH = width // 4, height // 4
     f = len(img.getpixel((0, 0))) # 3 - jpg, 4 - png
-    arr = [[[0 for _ in range (f)] for _ in range (height)] for _ in range (width)] # apakah ada cara lebih cepattt
-    for i in range (width):
-        for j in range (height):
-            for k in range (f):
-                arr[i][j][k] = img.getpixel((i, j))[k]
-    return arr # arr[width][height] = [r, g, b, a(kalau png)]
+    arr = [[[0 for _ in range (3)] for _ in range (NewH)] for _ in range (NewW)] # apakah ada cara lebih bagus
+    # sudah sekaligus dibagi jadi blok 4x4
+    # kalau tidak habis dibagi 4 terpotong
+    if (f == 3):
+        for i in range (width):
+            for j in range (height):
+                for k in range (3):
+                    arr[i // 4][j // 4][k] += img.getpixel((i, j))[k]
+    else:
+        for i in range (width):
+            for j in range (height):
+                for k in range (3):
+                    arr[i // 4][j // 4][k] += (img.getpixel((i, j))[k]) * ((img.getpixel((i, j))[3]) / 255)
+    for i in range(NewW):
+        for j in range (NewH):
+            for k in range (3):
+                arr[i][j][k] = arr[i][j][k] / 16
+            
+            # convert to hsv sekalian
+            arr[i][j][0], arr[i][j][1], arr[i][j][2] = rgb_to_hsv(arr[i][j][0], arr[i][j][1], arr[i][j][2])
+    return arr # arr[width][height] = [h, s, v]
 
 def rgb_to_hsv(r, g, b):
     R, G, B = r / 255, g / 255, b / 255
