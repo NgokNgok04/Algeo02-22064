@@ -17,7 +17,7 @@
 }
 
 
-.logo > img {
+.logo > img{
   height: 74.4px;
   vertical-align: middle;
   object-fit: cover;
@@ -37,4 +37,36 @@
   font-size: 15px;
   margin-bottom:0px;
   margin-top: 30px;
+}
+
+.menu > p:visited {
+  color: white;
+}
+.PersonCards{
+  display: flex;
+  justify-content: space-around;
+  transform: translate(0,50%);
+  top: 50%;
+  margin-right: 250px;
+  margin-left: 250px;
+}
+
+.detail{
+  background-color: #394049 ;
+  margin-left: 200px;
+  margin-right: 200px;
+  border-radius: 32px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  top: 50%;
+  transform: translate(0,50%);
+}
+.detail > p{
+  color: #F3BF99;
+  font-size: 40px;
+}
+.terakhir {
+  margin-bottom: 0px;
 }

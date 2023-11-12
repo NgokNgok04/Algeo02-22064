@@ -1,5 +1,11 @@
 import '../Home.css';
 import nnnlogo from "../assets/nnn-logo.png";
+import { BrowserRouter as Router, Route, Routes,Link } from 'react-router-dom';
+// import styled from "styled-components";
+const linkStyle = {
+    color: 'white',
+    textDecoration: 'none'
+}
 export default function Header (){
     return (
         <div className='header'>
@@ -8,9 +14,9 @@ export default function Header (){
                 <p>Nonstop Nubes November</p>
             </div>
             <div className='menu'>
-                <p> Reverse Image Search </p>
-                <p> How to Use </p>
-                <p> About Us </p>
+                <p> <Link to="/Reverse-Image-Search" style = {linkStyle}>Reverse Image Search</Link> </p>
+                <p> <Link to="/How-To-Use" style = {linkStyle}>How To Use </Link> </p>
+                <p> <Link to="/about" style = {linkStyle}>About</Link> </p>
             </div>
         </div>
     )
