@@ -10,8 +10,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Reverse-Image-Search" element={<Program />}/>
+        <Route path="/" element={<Program />}/>
         <Route path="/How-to-Use" element = {<HowToUse />}/>
         <Route path="/about" element={<About />}/>
       </Routes>

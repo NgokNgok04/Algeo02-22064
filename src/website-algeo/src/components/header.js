@@ -14,7 +14,7 @@ export default function Header (){
                 <p>Nonstop Nubes November</p>
             </div>
             <div className='menu'>
-                <p> <Link to="/Reverse-Image-Search" style = {linkStyle}>Reverse Image Search</Link> </p>
+                <p> <Link to="/" style = {linkStyle}>Reverse Image Search</Link> </p>
                 <p> <Link to="/How-To-Use" style = {linkStyle}>How To Use </Link> </p>
                 <p> <Link to="/about" style = {linkStyle}>About</Link> </p>
             </div>

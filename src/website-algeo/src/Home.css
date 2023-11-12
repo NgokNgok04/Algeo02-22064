@@ -52,7 +52,7 @@
 }
 
 .detail{
-  background-color: #394049 ;
+  background-color: #010828 ;
   margin-left: 200px;
   margin-right: 200px;
   border-radius: 32px;
@@ -69,4 +69,14 @@
 }
 .terakhir {
   margin-bottom: 0px;
+}
+
+.container {
+  background-color: #010828 ;
+  margin-left: 200px;
+  margin-right: 200px;
+  padding: 20px 20px 20px 20px;
+  border-radius: 36px;
+  top: 50%;
+  transform: translate(0,50%);
 }
