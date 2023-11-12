@@ -1,0 +1,40 @@
+.header{
+  padding-top: 10px;
+  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo > p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family: Black Ops One;
+  font-size: 15px;
+  width: 100px;
+  color: white;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+.logo > img {
+  height: 74.4px;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+.menu, .logo{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.menu > p {
+  color: white;
+  font-family: Black Ops One;
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 15px;
+  margin-bottom:0px;
+  margin-top: 30px;
+}
