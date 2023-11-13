@@ -58,3 +58,13 @@ def rgb_to_hsv_histBinArray(rgb_array):
     hist_idx = np.array([hsv_to_histidx(h, s, v) for h, s, v in hsv])
 
     return hist_idx
+
+def cosine_similarity(Vector1, Vector2):
+    dot_product, Vector1_Length, Vector2_Length = 0, 0, 0
+    for i in range (64):
+        dot_product += Vector1[i] * Vector2[i]
+        Vector1_Length += Vector1[i] * Vector1[i]
+        Vector2_Length += Vector2[i] * Vector2[i]
+    Vector1_Length, Vector2_Length = (Vector1_Length ** 0.5), (Vector2_Length ** 0.5)
+    similarity = dot_product / (Vector1_Length * Vector2_Length)
+    return similarity
