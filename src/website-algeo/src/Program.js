@@ -8,24 +8,22 @@ export default function Program() {
       <div className='container'>
         <div className='upload'>
           <div className = "upload-image">
-            <p> Upload a File </p>
+            <p> Upload an Image </p>
             {/* <p> Upload Image </p> */}
             <DragAndDropFile />
           </div>
 
           <div className='button'>
             <div className='text'> </div>
-            <div className='toggle'>
-
-            </div>
+            <div className='toggle'> </div>
 
             {/* <button></button> */}
           </div>
         </div>
 
-        <div className='result'>
+        {/* <div className='result'>
 
-        </div>
+        </div> */}
       </div>
     </div>
   );
