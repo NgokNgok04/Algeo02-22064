@@ -1,5 +1,6 @@
 from PIL import Image
 import numpy as np
+import time
 def open_image_and_preprocess(image_location):
     img = Image.open(image_location) # path
     arr = np.array(img)
@@ -60,11 +61,8 @@ def rgb_to_hsv_histBinArray(rgb_array):
     return hist_idx
 
 def cosine_similarity(Vector1, Vector2):
-    dot_product, Vector1_Length, Vector2_Length = 0, 0, 0
-    for i in range (64):
-        dot_product += Vector1[i] * Vector2[i]
-        Vector1_Length += Vector1[i] * Vector1[i]
-        Vector2_Length += Vector2[i] * Vector2[i]
-    Vector1_Length, Vector2_Length = (Vector1_Length ** 0.5), (Vector2_Length ** 0.5)
+    dot_product = np.sum(np.multiply(Vector1, Vector2))
+    Vector1_Length = np.sqrt(np.sum(np.square(Vector1)))
+    Vector2_Length = np.sqrt(np.sum(np.square(Vector2)))
     similarity = dot_product / (Vector1_Length * Vector2_Length)
     return similarity
