@@ -1,0 +1,21 @@
+p{
+    color:white;
+    font-family: Black Ops One;
+    margin-top: 0px;
+}
+.PersonCard {
+    text-align: center;
+    display: inline-block;
+    background-color: #010828;
+    border-radius: 16px;
+}
+.PersonCard > img {
+    width: 220px;
+    object-fit: cover;
+    object-position: center;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+}
+.nim{
+    color:#F3BF99;
+}

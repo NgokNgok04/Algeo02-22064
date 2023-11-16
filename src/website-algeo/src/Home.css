@@ -1,0 +1,129 @@
+.header{
+  padding-top: 10px;
+  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo > p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family: Black Ops One;
+  font-size: 15px;
+  width: 100px;
+  color: white;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+.logo > img{
+  height: 74.4px;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+.menu, .logo{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.menu > p {
+  color: white;
+  font-family: Black Ops One;
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 15px;
+  margin-bottom:0px;
+  margin-top: 30px;
+}
+
+.menu > p:visited {
+  color: white;
+}
+.PersonCards{
+  display: flex;
+  justify-content: space-around;
+  transform: translate(0,50%);
+  top: 50%;
+  margin-right: 250px;
+  margin-left: 250px;
+}
+
+.detail{
+  background-color: #010828 ;
+  margin-left: 200px;
+  margin-right: 200px;
+  border-radius: 32px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  top: 50%;
+  transform: translate(0,50%);
+}
+.detail > p{
+  color: #F3BF99;
+  font-size: 40px;
+}
+.terakhir {
+  margin-bottom: 0px;
+}
+
+.container {
+  /* background-color: #010828 ; */
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 20px 20px 20px 20px;
+  border-radius: 36px;
+  /* top: 50%; */
+  transform: translate(0,50%);
+  /* width: 500px; */
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-image, .button{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.button{
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  align-content: center;
+}
+
+.text{
+  width: 200px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-around;
+  /* width: 150px; */
+}
+.text > p{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0px;
+}
+
+.search{
+  display: flex;
+  margin-top: 60px;
+  justify-content: center;
+}
+
+.search-btn{
+  border-radius: 50px;
+  padding: 10px 10px 10px 10px;
+  font-family: Black Ops One;
+  /* background-color: #F3BF99; */
+  background-color: #23252C;
+  border: none;
+  cursor: pointer;
+  color: white;
+}

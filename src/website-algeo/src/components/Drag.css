@@ -1,0 +1,28 @@
+.dropzone{
+  border: 2px dashed #cccccc;
+  padding: 0px;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 0px;
+  margin-right: 0px;
+  height: 100px;
+  /* height: 100%; */
+}
+
+.imagepreview{
+  margin-top: 0px;
+  width: 200px;
+  height: 100%;
+  
+}
+.upload{
+  display: inline-block;
+  background-color: #010828 ;
+  height: fit-content;
+  width: 350px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-radius: 16px;
+}
