@@ -2,6 +2,8 @@ import os
 from PIL import Image
 import numpy as np
 import math
+import multiprocessing
+import json
 
 def gscale_to_co_occur(matrix, mat_cooccur):
     matrix = np.array(matrix)
@@ -10,70 +12,35 @@ def gscale_to_co_occur(matrix, mat_cooccur):
         for j in range(width-1):
             mat_cooccur[matrix[i][j]][matrix[i][j+1]] += 1
 
-def transpose_matrix(matrix, mat_transpose):
+def sym_matrix(matrix):
     matrix = np.array(matrix)
-    height,width = matrix.shape
-    for i in range(height):
-        for j in range(width):
-            mat_transpose[j][i] = matrix[i][j]
-
-def sym_matrix(matrix, mat_transpose):
-    mat_sym = [[0 for i in range(256)] for j in range(256)]
-    matrix = np.array(matrix)
-    height,width = matrix.shape
-    for i in range(height):
-        for j in range(width):
-            mat_sym[i][j] = matrix[i][j] + mat_transpose[i][j]
-    return mat_sym
+    return matrix + matrix.T
 
 def normalized_matrix(matrix, mat_norm):
-    sum = 0
     matrix = np.array(matrix)
-    height,width = matrix.shape
-    for i in range(height):
-        for j in range(width):
-            sum += matrix[i][j]
-    for i in range(height):
-        for j in range(width):
-            mat_norm[i][j] = matrix[i][j]/sum
+    total_sum = matrix.sum()
+    mat_norm[:] = matrix / total_sum
 
 def contrast(matrix):
-    result = 0
     matrix = np.array(matrix)
-    height,width = matrix.shape
-    for i in range(height):
-        for j in range(width):
-            result += matrix[i][j]*(pow(i-j,2))
-    return result
+    i, j = np.indices(matrix.shape)
+    return np.sum(matrix * (pow(i-j,2)))
 
 def homogeneity(matrix):
-    result = 0
     matrix = np.array(matrix)
-    height,width = matrix.shape
-    for i in range(height):
-        for j in range(width):
-            result += (matrix[i][j])/(1 + pow(i-j,2))
-    return result
+    i, j = np.indices(matrix.shape)
+    return np.sum(matrix / (1 + (pow(i-j,2))))
 
 def entropy(matrix):
-    result = 0
     matrix = np.array(matrix)
-    height,width = matrix.shape
-    for i in range(height):
-        for j in range(width):
-            if (matrix[i][j] != 0):
-                result += matrix[i][j]*math.log10(matrix[i][j])
-    result = -result
-    return result
+    not_zero_elmts = matrix[matrix != 0]
+    return -np.sum(not_zero_elmts * np.log10(not_zero_elmts))
 
 def rgb_to_gscale(R,G,B):
-    Y = 0.299*R + 0.587*G + 0.114*B
-    Y = round(Y)
-    return Y
-
+    return round(0.299 * R + 0.587 * G + 0.114 * B)
+    
 def cbir_texture(image_path):
     img_cooccur = [[0 for i in range(256)] for j in range(256)]
-    transpose_coocur = [[0 for i in range(256)] for j in range(256)]
     norm_matrix = [[0 for i in range(256)] for j in range(256)]
     vektor = []
     img = Image.open(image_path)
@@ -87,8 +54,7 @@ def cbir_texture(image_path):
             gscale.append(grayscale)
         img_grayscale.append(gscale)
     gscale_to_co_occur(img_grayscale, img_cooccur)
-    transpose_matrix(img_cooccur, transpose_coocur)
-    normalized_matrix(sym_matrix(img_cooccur, transpose_coocur), norm_matrix)
+    normalized_matrix(sym_matrix(img_cooccur), norm_matrix)
     Contrast = contrast(norm_matrix)
     homogein = homogeneity(norm_matrix)
     Entropy = entropy(norm_matrix)
@@ -98,15 +64,14 @@ def cbir_texture(image_path):
     return vektor
 
 def cbir_dataset(folder_path):
-    list_files = os.listdir(folder_path)
-    dataset_vektor = []
-    for f in list_files :
-        print(f)
-        image_path = os.path.join(folder_path, f)
-        dataset_vektor(cbir_texture(image_path))
+    list_files = [os.path.join(folder_path, f) for f in os.listdir(folder_path)]
+    with multiprocessing.Pool() as pool:
+        dataset_vektor = pool.map(cbir_texture, list_files)
     return dataset_vektor
 
-
+def dataset_to_json(vektor_dataset):
+    with open("dataset_vektor.json", 'w') as json_file:
+        json.dump(vektor_dataset, json_file, indent=4)
 
 def similarity(vektora,vektorb):
     pembilang = 0
@@ -119,3 +84,19 @@ def similarity(vektora,vektorb):
     penyebut = math.sqrt(lena)*math.sqrt(lenb)
     similar = pembilang/penyebut
     return similar
+
+def read_from_json(json_file_path):
+    with open(json_file_path, 'r') as json_file:
+        data = json.load(json_file)
+    return data
+
+def compare_and_write_results(image_path, dataset_vectors_path):
+    dataset_vector = read_from_json(dataset_vectors_path)
+    image_vector = cbir_texture(image_path)
+    results = []
+    for i, dataset_vector in enumerate(dataset_vector):
+        similarity_score = similarity(image_vector, dataset_vector)
+        if similarity_score>0.60:
+            results.append({"image_index": i, "similarity_score": similarity_score})
+    with open("compare_result.json", 'w') as output_json_file:
+        json.dump(results, output_json_file, indent=4)
