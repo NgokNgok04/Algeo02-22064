@@ -23,7 +23,7 @@
     background-color: white;
     border-radius: 99px;
     transform: translateX(0);
-    transition: left 0.15s ease;
+    transition: left 0.2s ease;
     position: absolute;
     left: 3px;
     top: 50%;
