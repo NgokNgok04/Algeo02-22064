@@ -2,7 +2,9 @@ from PIL import Image
 import numpy as np
 import os
 import json
+import multiprocessing
 import time
+
 def open_folder(folder_location):
     Image_List = np.array(os.listdir(folder_location))
     Image_List = np.core.defchararray.add(folder_location, Image_List)
@@ -19,6 +21,7 @@ def open_image_to_Vector(image_location):
     arr = rgb_to_hsv_histBinArray(arr)
     bins = [i for i in range (73)]
     arr, _ = np.histogram(arr, bins = bins)
+    arr = arr.tolist()
 
     # arr array 1D dengan panjang 72, tinggal dipakai untuk cosine similarity
     return arr
@@ -85,35 +88,46 @@ def cosine_similarity(Vector1, Vector2):
     similarity = dot_product / (Vector1_Length * Vector2_Length)
     return similarity
 
-def similarity_list(Image_Input, Image_Dataset):
-    # Image_Input adalah string yang berisi path ke gambar masukan
+def Vector_list(Image_Dataset):
     # Image_Dataset adalah list (np.array) yang berisi string semua path ke semua gambar dataset
-    Vector_Input = open_image_to_Vector(Image_Input)
-    Cos_Sim_List = [0 for _ in range (len(Image_Dataset))]
-    for i in range (len(Cos_Sim_List)):
-        Vector_Compare = open_image_to_Vector(Image_Dataset[i])
-        Cos_Sim_List[i] = cosine_similarity(Vector_Input, Vector_Compare)
-    Cos_Sim_List = list(zip(Image_Dataset, Cos_Sim_List))
-    Cos_Sim_List = sorted(Cos_Sim_List, key = lambda x: x[1], reverse = True)
-    return Cos_Sim_List
+    Vector_List = [0 for _ in range (len(Image_Dataset))]
+    with multiprocessing.Pool() as pool:
+        Vector_List = pool.map(open_image_to_Vector, Image_Dataset)
+    Vector_List = list(zip(Image_Dataset, Vector_List))
+    return Vector_List
 
-def write_JSON(SimList, outputFile_Path):
+def write_JSON(DATA, outputFile_Path):
+    # vektor histogram atau hasil cosine similarity
     with open(outputFile_Path, 'w') as file:
-        for i in range (len(SimList)):
-            data = {
-                "path": SimList[i][0],
-                "Sim": SimList[i][1]
-            }
-            json.dump(data, file, indent = 0)
+        json.dump(DATA, file, indent = 2)
     return
-"""
-test
+
+def read_JSON(JSON_path):
+    with open(JSON_path, 'r') as file:
+        Vector = json.load(file)
+    return Vector
+
+def Similarity_List(Image_Input, Vector_List):
+    # Image_Input: path ke gambar input
+    # Vektor_List: array hasil baca json vektor histogram
+    Vector_Input = open_image_to_Vector(Image_Input)
+    for i in range (len(Vector_List)):
+        Vector_List[i][1] = cosine_similarity(Vector_Input, Vector_List[i][1])
+    Vector_List = [sim for sim in Vector_List if sim[1] >= 0.6]
+    Vector_List = sorted(Vector_List, key=lambda x: x[1], reverse=True)
+    return Vector_List
+
+"""for testing
 start = time.time()
 Input = "../test/0.jpg"
 Dataset = open_folder("../test/")
-sim = similarity_list(Input, Dataset)
-write_JSON(sim, "output.json")
-print(time.time() - start)
+if __name__ == "__main__":
+    V = Vector_list(Dataset)
+    write_JSON(V, "v.json")
+    print(time.time() - start)
+    A = read_JSON("v.json")
+    A = Similarity_List(Input, A)
+    write_JSON(A, "w.json")
+    print(time.time() - start)
 """
-
 #python3 CBIR_warna.py
