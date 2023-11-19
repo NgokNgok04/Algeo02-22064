@@ -61,7 +61,8 @@ def cbir_texture(image_path):
     vektor.append(Contrast)
     vektor.append(homogein)
     vektor.append(Entropy)
-    return vektor
+    vektor_and_path = {"image_path": image_path, "vektor": vektor}
+    return vektor_and_path
 
 def cbir_dataset(folder_path):
     list_files = [os.path.join(folder_path, f) for f in os.listdir(folder_path)]
@@ -70,7 +71,7 @@ def cbir_dataset(folder_path):
     return dataset_vektor
 
 def dataset_to_json(vektor_dataset):
-    with open("dataset_vektor.json", 'w') as json_file:
+    with open("D:\\Tubes-Algeo-2\\Algeo02-22064\\src\\flask-server//dataset_vektor.json", 'w') as json_file:
         json.dump(vektor_dataset, json_file, indent=4)
 
 def similarity(vektora,vektorb):
@@ -85,30 +86,40 @@ def similarity(vektora,vektorb):
     similar = pembilang/penyebut
     return similar
 
-def read_from_json(json_file_path):
-    with open(json_file_path, 'r') as json_file:
-        data = json.load(json_file)
-    return data
+def similarity_sorting(dataset_array):
+    sorted_people = sorted(dataset_array, key=lambda x: x['similarity_score'], reverse=True)
+    return sorted_people
 
 def compare_and_write_results(image_path, dataset_vectors_path):
-    dataset_vector = read_from_json(dataset_vectors_path)
+    with open(dataset_vectors_path) as file:
+        jsonArray = json.load(file)
     image_vector = cbir_texture(image_path)
     results = []
-    for i, dataset_vector in enumerate(dataset_vector):
-        similarity_score = similarity(image_vector, dataset_vector)
+    for current_object in jsonArray:
+        similarity_score = similarity(image_vector['vektor'], current_object['vektor'])
         if similarity_score>0.60:
-            results.append({"image_index": i, "similarity_score": similarity_score})
-    with open("compare_result.json", 'w') as output_json_file:
+            results.append({"image_path": current_object['image_path'], "similarity_score": similarity_score})
+    results = similarity_sorting(results)
+    with open("D:\\Tubes-Algeo-2\\Algeo02-22064\\src\\flask-server//compare_result.json", 'w') as output_json_file:
         json.dump(results, output_json_file, indent=4)
 
+def read_json(json_file_path):
+    with open(json_file_path, 'r') as json_file:
+        data = json.load(json_file)
+        return [item.get('image_path') for item in data]
+    
 if __name__ == "__main__":
     current_directory = os.getcwd()
     parent_directory = os.path.abspath(os.path.join(current_directory, os.pardir))
-    target_folder = "flask-server\\static\\uploads"
+    target_folder = "src\\flask-server\\static\\uploads"
     target_folder_path = os.path.join(parent_directory, target_folder)
     dataset_to_json(cbir_dataset(target_folder_path))
 
-    dataset = "dataset_vektor.json"
-    # dataset = os.path.join(parent_directory,"src//dataset_vektor.json")
-    image_path = os.path.join(parent_directory, "flask-server\\static\\uploads\\0.jpg")
+    # dataset = "dataset_vektor.json"
+    dataset = os.path.join(parent_directory,"src//flask-server//dataset_vektor.json")
+    image_path = os.path.join(parent_directory, "src//flask-server\\static\\uploads\\0.jpg")
     compare_and_write_results(image_path,dataset)
+    app_directory_path = os.path.abspath(os.path.dirname(__file__))
+
+    json_file_path = os.path.join(parent_directory,"src//flask-server//compare_result.json")
+    print(read_json(json_file_path))

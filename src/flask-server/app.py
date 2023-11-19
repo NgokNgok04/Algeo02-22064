@@ -1,10 +1,12 @@
-from flask import Flask, json, request, jsonify
+from flask import Flask, json, request, jsonify, abort
+import json
+import base64
 import os
 # import urlib.request import urlopen
 from werkzeug.utils import secure_filename
 from flask_cors import CORS
 from flask_marshmallow import Marshmallow
-from CBIR_texture import compare_and_write_results, dataset_to_json, cbir_dataset
+from CBIR_texture import compare_and_write_results, dataset_to_json, cbir_dataset, read_json
 from models import db, Image
 
 
@@ -96,13 +98,41 @@ def images():
     results = image_schema.dump(all_images)
     return jsonify(results)
 
-@app.route('/similarImages', methods=['POST'])
+@app.route('/similarImages', methods=['GET'])
 def similarImages():
-    target_folder_path = "static\\uploads"
-    dataset_to_json(cbir_dataset(target_folder_path))
-    dataset = "dataset_vektor.json"
-    image_path = "static\\uploads\\0.jpg"
-    compare_and_write_results(image_path,dataset)
+    try:
+        current_directory = os.getcwd()
+        parent_directory = os.path.abspath(os.path.join(current_directory, os.pardir))
+        target_folder = "static\\uploads"
+        # target_folder_path = os.path.join(parent_directory, target_folder)
+        dataset_to_json(cbir_dataset(target_folder))
+
+        # dataset = "dataset_vektor.json"
+        dataset = "dataset_vektor.json"
+        image_path = "static\\uploads\\0.jpg"
+        compare_and_write_results(image_path,dataset)
+        
+        app_directory_path = os.path.abspath(os.path.dirname(__file__))
+        json_file_path = "compare_result.json"
+        # json_file_path = os.path.join(parent_directory,"src//flask-server//compare_result.json")
+        return jsonify(read_json(json_file_path))
+    except Exception as e:
+        print(f"Error in similarImages {str(e)}")
+
+        return jsonify({'error': 'Internal Server Error'}), 500
 
 # if __name__ == "__main__":
 #     app.run(debug=True)
+# D:\Tubes-Algeo-2\Algeo02-22064\src\flask-server\static\uploads
+        # target_folder_path = "static\\uploads"
+        # dataset_to_json(cbir_dataset(target_folder_path))
+        # dataset = "dataset_vektor.json"
+        # current_directory = os.getcwd()
+        # parent_directory = os.path.abspath(os.path.join(current_directory, os.pardir))
+        # image_path = os.path.join(parent_directory, "src\\flask-server\\static\\uploads\\0.jpg")
+        # compare_and_write_results(image_path,dataset)
+
+        # app_directory_path = os.path.abspath(os.path.dirname(__file__))
+        # json_file_path = os.path.join(app_directory_path, 'compare_result.json')
+
+        # return jsonify({'imagePaths' : read_json(json_file_path)})
