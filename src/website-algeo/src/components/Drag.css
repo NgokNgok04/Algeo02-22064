@@ -5,13 +5,14 @@
   cursor: pointer;
   margin-left: 0px;
   margin-right: 0px;
-  height: 100px;
+  height: 512px;
+  width: 512px;
   /* height: 100%; */
 }
 
 .imagepreview{
   margin-top: 0px;
-  width: 200px;
+  width: 100%;
   height: 100%;
   
 }
@@ -25,4 +26,8 @@
   padding-top: 16px;
   padding-bottom: 16px;
   border-radius: 16px;
+}
+
+.dragndrop{
+  margin-top: 500px;
 }

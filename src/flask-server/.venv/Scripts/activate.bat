@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=D:\Tubes_Algeo_2_lens\Algeo02-22064\src\flask-server\.venv
+set VIRTUAL_ENV=D:\Tubes-Algeo-2\Algeo02-22064\src\flask-server\.venv
 
 if not defined PROMPT set PROMPT=$P$G
 

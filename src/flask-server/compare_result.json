@@ -1,0 +1,606 @@
+[
+    {
+        "image_path": "static\\uploads\\0.jpg",
+        "similarity_score": 1.0
+    },
+    {
+        "image_path": "static\\uploads\\122.jpg",
+        "similarity_score": 0.9999998925799802
+    },
+    {
+        "image_path": "static\\uploads\\37.jpg",
+        "similarity_score": 0.9999998547027541
+    },
+    {
+        "image_path": "static\\uploads\\9.jpg",
+        "similarity_score": 0.9999996887177323
+    },
+    {
+        "image_path": "static\\uploads\\105.jpg",
+        "similarity_score": 0.9999993209094882
+    },
+    {
+        "image_path": "static\\uploads\\13.jpg",
+        "similarity_score": 0.9999991697408613
+    },
+    {
+        "image_path": "static\\uploads\\63.jpg",
+        "similarity_score": 0.9999981864218218
+    },
+    {
+        "image_path": "static\\uploads\\70.jpg",
+        "similarity_score": 0.9999978232532601
+    },
+    {
+        "image_path": "static\\uploads\\40.jpg",
+        "similarity_score": 0.999997730391756
+    },
+    {
+        "image_path": "static\\uploads\\148.jpg",
+        "similarity_score": 0.9999972703351325
+    },
+    {
+        "image_path": "static\\uploads\\100.jpg",
+        "similarity_score": 0.9999967297090229
+    },
+    {
+        "image_path": "static\\uploads\\48.jpg",
+        "similarity_score": 0.9999967242859819
+    },
+    {
+        "image_path": "static\\uploads\\147.jpg",
+        "similarity_score": 0.9999963500307083
+    },
+    {
+        "image_path": "static\\uploads\\2.jpg",
+        "similarity_score": 0.9999958584440827
+    },
+    {
+        "image_path": "static\\uploads\\79.jpg",
+        "similarity_score": 0.9999958490681202
+    },
+    {
+        "image_path": "static\\uploads\\14.jpg",
+        "similarity_score": 0.9999958244076262
+    },
+    {
+        "image_path": "static\\uploads\\46.jpg",
+        "similarity_score": 0.9999957822175831
+    },
+    {
+        "image_path": "static\\uploads\\135.jpg",
+        "similarity_score": 0.999995342264956
+    },
+    {
+        "image_path": "static\\uploads\\95.jpg",
+        "similarity_score": 0.9999947708452922
+    },
+    {
+        "image_path": "static\\uploads\\36.jpg",
+        "similarity_score": 0.9999944940848293
+    },
+    {
+        "image_path": "static\\uploads\\43.jpg",
+        "similarity_score": 0.999994473859519
+    },
+    {
+        "image_path": "static\\uploads\\52.jpg",
+        "similarity_score": 0.9999934194029384
+    },
+    {
+        "image_path": "static\\uploads\\87.jpg",
+        "similarity_score": 0.9999930794091283
+    },
+    {
+        "image_path": "static\\uploads\\28.jpg",
+        "similarity_score": 0.9999925954633061
+    },
+    {
+        "image_path": "static\\uploads\\85.jpg",
+        "similarity_score": 0.9999922229692386
+    },
+    {
+        "image_path": "static\\uploads\\132.jpg",
+        "similarity_score": 0.9999908159157267
+    },
+    {
+        "image_path": "static\\uploads\\60.jpg",
+        "similarity_score": 0.9999900652536635
+    },
+    {
+        "image_path": "static\\uploads\\119.jpg",
+        "similarity_score": 0.9999896756165495
+    },
+    {
+        "image_path": "static\\uploads\\96.jpg",
+        "similarity_score": 0.9999882937363251
+    },
+    {
+        "image_path": "static\\uploads\\116.jpg",
+        "similarity_score": 0.999987184483443
+    },
+    {
+        "image_path": "static\\uploads\\58.jpg",
+        "similarity_score": 0.9999860446023213
+    },
+    {
+        "image_path": "static\\uploads\\93.jpg",
+        "similarity_score": 0.9999846054195362
+    },
+    {
+        "image_path": "static\\uploads\\88.jpg",
+        "similarity_score": 0.9999838115160555
+    },
+    {
+        "image_path": "static\\uploads\\32.jpg",
+        "similarity_score": 0.9999824286146524
+    },
+    {
+        "image_path": "static\\uploads\\73.jpg",
+        "similarity_score": 0.9999819225951649
+    },
+    {
+        "image_path": "static\\uploads\\30.jpg",
+        "similarity_score": 0.9999814707353449
+    },
+    {
+        "image_path": "static\\uploads\\54.jpg",
+        "similarity_score": 0.999980615867311
+    },
+    {
+        "image_path": "static\\uploads\\127.jpg",
+        "similarity_score": 0.999979348203836
+    },
+    {
+        "image_path": "static\\uploads\\18.jpg",
+        "similarity_score": 0.9999777479483088
+    },
+    {
+        "image_path": "static\\uploads\\49.jpg",
+        "similarity_score": 0.9999740357008302
+    },
+    {
+        "image_path": "static\\uploads\\41.jpg",
+        "similarity_score": 0.9999738929260481
+    },
+    {
+        "image_path": "static\\uploads\\17.jpg",
+        "similarity_score": 0.9999722966659714
+    },
+    {
+        "image_path": "static\\uploads\\97.jpg",
+        "similarity_score": 0.9999682189141076
+    },
+    {
+        "image_path": "static\\uploads\\108.jpg",
+        "similarity_score": 0.9999678780186683
+    },
+    {
+        "image_path": "static\\uploads\\51.jpg",
+        "similarity_score": 0.999967597388858
+    },
+    {
+        "image_path": "static\\uploads\\117.jpg",
+        "similarity_score": 0.9999669639503207
+    },
+    {
+        "image_path": "static\\uploads\\72.jpg",
+        "similarity_score": 0.9999648311794811
+    },
+    {
+        "image_path": "static\\uploads\\145.jpg",
+        "similarity_score": 0.9999638008183971
+    },
+    {
+        "image_path": "static\\uploads\\91.jpg",
+        "similarity_score": 0.9999620176748084
+    },
+    {
+        "image_path": "static\\uploads\\56.jpg",
+        "similarity_score": 0.9999593569730206
+    },
+    {
+        "image_path": "static\\uploads\\111.jpg",
+        "similarity_score": 0.9999590648640659
+    },
+    {
+        "image_path": "static\\uploads\\140.jpg",
+        "similarity_score": 0.999955048542032
+    },
+    {
+        "image_path": "static\\uploads\\12.jpg",
+        "similarity_score": 0.9999524690332302
+    },
+    {
+        "image_path": "static\\uploads\\99.jpg",
+        "similarity_score": 0.9999500828323645
+    },
+    {
+        "image_path": "static\\uploads\\146.jpg",
+        "similarity_score": 0.9999492419192748
+    },
+    {
+        "image_path": "static\\uploads\\92.jpg",
+        "similarity_score": 0.9999357541808198
+    },
+    {
+        "image_path": "static\\uploads\\19.jpg",
+        "similarity_score": 0.9999333076316951
+    },
+    {
+        "image_path": "static\\uploads\\10.jpg",
+        "similarity_score": 0.999931662921063
+    },
+    {
+        "image_path": "static\\uploads\\45.jpg",
+        "similarity_score": 0.9999307618080856
+    },
+    {
+        "image_path": "static\\uploads\\107.jpg",
+        "similarity_score": 0.999927284366156
+    },
+    {
+        "image_path": "static\\uploads\\74.jpg",
+        "similarity_score": 0.9999229902734599
+    },
+    {
+        "image_path": "static\\uploads\\102.jpg",
+        "similarity_score": 0.9999222180964878
+    },
+    {
+        "image_path": "static\\uploads\\38.jpg",
+        "similarity_score": 0.999921966301949
+    },
+    {
+        "image_path": "static\\uploads\\69.jpg",
+        "similarity_score": 0.9999163830258594
+    },
+    {
+        "image_path": "static\\uploads\\114.jpg",
+        "similarity_score": 0.9999113793594578
+    },
+    {
+        "image_path": "static\\uploads\\59.jpg",
+        "similarity_score": 0.9999085195085932
+    },
+    {
+        "image_path": "static\\uploads\\144.jpg",
+        "similarity_score": 0.999906104373624
+    },
+    {
+        "image_path": "static\\uploads\\47.jpg",
+        "similarity_score": 0.9999050773217633
+    },
+    {
+        "image_path": "static\\uploads\\118.jpg",
+        "similarity_score": 0.9999025168439737
+    },
+    {
+        "image_path": "static\\uploads\\68.jpg",
+        "similarity_score": 0.9998986456656206
+    },
+    {
+        "image_path": "static\\uploads\\130.jpg",
+        "similarity_score": 0.9998970211125596
+    },
+    {
+        "image_path": "static\\uploads\\76.jpg",
+        "similarity_score": 0.9998958945301333
+    },
+    {
+        "image_path": "static\\uploads\\138.jpg",
+        "similarity_score": 0.999894757214233
+    },
+    {
+        "image_path": "static\\uploads\\5.jpg",
+        "similarity_score": 0.9998909200995584
+    },
+    {
+        "image_path": "static\\uploads\\20.jpg",
+        "similarity_score": 0.9998892311055151
+    },
+    {
+        "image_path": "static\\uploads\\26.jpg",
+        "similarity_score": 0.9998734471713284
+    },
+    {
+        "image_path": "static\\uploads\\134.jpg",
+        "similarity_score": 0.9998709100382269
+    },
+    {
+        "image_path": "static\\uploads\\141.jpg",
+        "similarity_score": 0.9998689940128199
+    },
+    {
+        "image_path": "static\\uploads\\1.jpg",
+        "similarity_score": 0.9998687421158999
+    },
+    {
+        "image_path": "static\\uploads\\121.jpg",
+        "similarity_score": 0.9998684879256099
+    },
+    {
+        "image_path": "static\\uploads\\34.jpg",
+        "similarity_score": 0.999867974385559
+    },
+    {
+        "image_path": "static\\uploads\\133.jpg",
+        "similarity_score": 0.9998601753744693
+    },
+    {
+        "image_path": "static\\uploads\\55.jpg",
+        "similarity_score": 0.9998475961677334
+    },
+    {
+        "image_path": "static\\uploads\\66.jpg",
+        "similarity_score": 0.9998425981488711
+    },
+    {
+        "image_path": "static\\uploads\\149.jpg",
+        "similarity_score": 0.9998398983717536
+    },
+    {
+        "image_path": "static\\uploads\\123.jpg",
+        "similarity_score": 0.9998375962183802
+    },
+    {
+        "image_path": "static\\uploads\\125.jpg",
+        "similarity_score": 0.9998339486909118
+    },
+    {
+        "image_path": "static\\uploads\\21.jpg",
+        "similarity_score": 0.9998294343785483
+    },
+    {
+        "image_path": "static\\uploads\\101.jpg",
+        "similarity_score": 0.999829044713258
+    },
+    {
+        "image_path": "static\\uploads\\71.jpg",
+        "similarity_score": 0.9998267259565334
+    },
+    {
+        "image_path": "static\\uploads\\110.jpg",
+        "similarity_score": 0.9998265118494906
+    },
+    {
+        "image_path": "static\\uploads\\29.jpg",
+        "similarity_score": 0.9998176630220663
+    },
+    {
+        "image_path": "static\\uploads\\50.jpg",
+        "similarity_score": 0.9998111503462963
+    },
+    {
+        "image_path": "static\\uploads\\106.jpg",
+        "similarity_score": 0.9998105717690221
+    },
+    {
+        "image_path": "static\\uploads\\64.jpg",
+        "similarity_score": 0.9998092421792537
+    },
+    {
+        "image_path": "static\\uploads\\98.jpg",
+        "similarity_score": 0.9998073620148568
+    },
+    {
+        "image_path": "static\\uploads\\113.jpg",
+        "similarity_score": 0.9998038587745806
+    },
+    {
+        "image_path": "static\\uploads\\57.jpg",
+        "similarity_score": 0.9998036470471163
+    },
+    {
+        "image_path": "static\\uploads\\16.jpg",
+        "similarity_score": 0.9997970618847072
+    },
+    {
+        "image_path": "static\\uploads\\82.jpg",
+        "similarity_score": 0.9997886864329824
+    },
+    {
+        "image_path": "static\\uploads\\129.jpg",
+        "similarity_score": 0.9997856752192352
+    },
+    {
+        "image_path": "static\\uploads\\62.jpg",
+        "similarity_score": 0.9997810543628058
+    },
+    {
+        "image_path": "static\\uploads\\126.jpg",
+        "similarity_score": 0.999776987826237
+    },
+    {
+        "image_path": "static\\uploads\\124.jpg",
+        "similarity_score": 0.9997765213139603
+    },
+    {
+        "image_path": "static\\uploads\\11.jpg",
+        "similarity_score": 0.9997722870864684
+    },
+    {
+        "image_path": "static\\uploads\\31.jpg",
+        "similarity_score": 0.9997628907849263
+    },
+    {
+        "image_path": "static\\uploads\\7.jpg",
+        "similarity_score": 0.9997553690301779
+    },
+    {
+        "image_path": "static\\uploads\\83.jpg",
+        "similarity_score": 0.9997516333882587
+    },
+    {
+        "image_path": "static\\uploads\\75.jpg",
+        "similarity_score": 0.9997446227824153
+    },
+    {
+        "image_path": "static\\uploads\\39.jpg",
+        "similarity_score": 0.999741313958274
+    },
+    {
+        "image_path": "static\\uploads\\143.jpg",
+        "similarity_score": 0.9997383439305797
+    },
+    {
+        "image_path": "static\\uploads\\77.jpg",
+        "similarity_score": 0.9997334532567719
+    },
+    {
+        "image_path": "static\\uploads\\6.jpg",
+        "similarity_score": 0.9997231620326368
+    },
+    {
+        "image_path": "static\\uploads\\139.jpg",
+        "similarity_score": 0.9997205106987009
+    },
+    {
+        "image_path": "static\\uploads\\81.jpg",
+        "similarity_score": 0.9997200700477703
+    },
+    {
+        "image_path": "static\\uploads\\27.jpg",
+        "similarity_score": 0.9997174658682166
+    },
+    {
+        "image_path": "static\\uploads\\89.jpg",
+        "similarity_score": 0.9997152277199077
+    },
+    {
+        "image_path": "static\\uploads\\128.jpg",
+        "similarity_score": 0.9997141570568795
+    },
+    {
+        "image_path": "static\\uploads\\142.jpg",
+        "similarity_score": 0.9997017358579591
+    },
+    {
+        "image_path": "static\\uploads\\120.jpg",
+        "similarity_score": 0.9996902451503528
+    },
+    {
+        "image_path": "static\\uploads\\24.jpg",
+        "similarity_score": 0.9996897104631995
+    },
+    {
+        "image_path": "static\\uploads\\4.jpg",
+        "similarity_score": 0.9996829632859379
+    },
+    {
+        "image_path": "static\\uploads\\22.jpg",
+        "similarity_score": 0.9996801558811959
+    },
+    {
+        "image_path": "static\\uploads\\23.jpg",
+        "similarity_score": 0.9996650135327662
+    },
+    {
+        "image_path": "static\\uploads\\33.jpg",
+        "similarity_score": 0.9996584751927899
+    },
+    {
+        "image_path": "static\\uploads\\44.jpg",
+        "similarity_score": 0.9996531452182242
+    },
+    {
+        "image_path": "static\\uploads\\115.jpg",
+        "similarity_score": 0.9996360606647107
+    },
+    {
+        "image_path": "static\\uploads\\35.jpg",
+        "similarity_score": 0.9996356813599377
+    },
+    {
+        "image_path": "static\\uploads\\84.jpg",
+        "similarity_score": 0.9996220505374407
+    },
+    {
+        "image_path": "static\\uploads\\15.jpg",
+        "similarity_score": 0.9996119840754049
+    },
+    {
+        "image_path": "static\\uploads\\136.jpg",
+        "similarity_score": 0.9995342194518954
+    },
+    {
+        "image_path": "static\\uploads\\8.jpg",
+        "similarity_score": 0.9995242484516514
+    },
+    {
+        "image_path": "static\\uploads\\112.jpg",
+        "similarity_score": 0.99941259673815
+    },
+    {
+        "image_path": "static\\uploads\\80.jpg",
+        "similarity_score": 0.9994020351211113
+    },
+    {
+        "image_path": "static\\uploads\\86.jpg",
+        "similarity_score": 0.9993817929500388
+    },
+    {
+        "image_path": "static\\uploads\\103.jpg",
+        "similarity_score": 0.9993653526067772
+    },
+    {
+        "image_path": "static\\uploads\\137.jpg",
+        "similarity_score": 0.9992900142803911
+    },
+    {
+        "image_path": "static\\uploads\\94.jpg",
+        "similarity_score": 0.9991770600849919
+    },
+    {
+        "image_path": "static\\uploads\\25.jpg",
+        "similarity_score": 0.9991734558402844
+    },
+    {
+        "image_path": "static\\uploads\\104.jpg",
+        "similarity_score": 0.9989610594736889
+    },
+    {
+        "image_path": "static\\uploads\\90.jpg",
+        "similarity_score": 0.9989517213839145
+    },
+    {
+        "image_path": "static\\uploads\\78.jpg",
+        "similarity_score": 0.9989350878540179
+    },
+    {
+        "image_path": "static\\uploads\\3.jpg",
+        "similarity_score": 0.9989201294721725
+    },
+    {
+        "image_path": "static\\uploads\\109.jpg",
+        "similarity_score": 0.9981613217612636
+    },
+    {
+        "image_path": "static\\uploads\\131.jpg",
+        "similarity_score": 0.998071488989048
+    },
+    {
+        "image_path": "static\\uploads\\67.jpg",
+        "similarity_score": 0.9971519316344771
+    },
+    {
+        "image_path": "static\\uploads\\42.jpg",
+        "similarity_score": 0.9970247549596861
+    },
+    {
+        "image_path": "static\\uploads\\53.jpg",
+        "similarity_score": 0.9937870946144942
+    },
+    {
+        "image_path": "static\\uploads\\61.jpg",
+        "similarity_score": 0.9909743568936603
+    },
+    {
+        "image_path": "static\\uploads\\65.jpg",
+        "similarity_score": 0.9689928778577446
+    },
+    {
+        "image_path": "static\\uploads\\150.jpg",
+        "similarity_score": 0.9589257928598923
+    }
+]

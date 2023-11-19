@@ -117,10 +117,10 @@ def Similarity_List(Image_Input, Vector_List):
     Vector_List = sorted(Vector_List, key=lambda x: x[1], reverse=True)
     return Vector_List
 
-"""for testing
+
 start = time.time()
-Input = "../test/0.jpg"
-Dataset = open_folder("../test/")
+Input = "../../test/0.jpg"
+Dataset = open_folder("../../test/")
 if __name__ == "__main__":
     V = Vector_list(Dataset)
     write_JSON(V, "v.json")
@@ -129,5 +129,5 @@ if __name__ == "__main__":
     A = Similarity_List(Input, A)
     write_JSON(A, "w.json")
     print(time.time() - start)
-"""
+
 #python3 CBIR_warna.py
