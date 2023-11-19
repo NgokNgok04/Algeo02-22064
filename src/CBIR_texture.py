@@ -61,7 +61,8 @@ def cbir_texture(image_path):
     vektor.append(Contrast)
     vektor.append(homogein)
     vektor.append(Entropy)
-    return vektor
+    vektor_and_path = {"image_path": image_path, "vektor": vektor}
+    return vektor_and_path
 
 def cbir_dataset(folder_path):
     list_files = [os.path.join(folder_path, f) for f in os.listdir(folder_path)]
@@ -90,13 +91,25 @@ def read_from_json(json_file_path):
         data = json.load(json_file)
     return data
 
+def similarity_sorting(dataset_array):
+    sorted_people = sorted(dataset_array, key=lambda x: x['similarity_score'], reverse=True)
+    return sorted_people
+
 def compare_and_write_results(image_path, dataset_vectors_path):
-    dataset_vector = read_from_json(dataset_vectors_path)
+    with open(dataset_vectors_path) as file:
+        jsonArray = json.load(file)
     image_vector = cbir_texture(image_path)
     results = []
-    for i, dataset_vector in enumerate(dataset_vector):
-        similarity_score = similarity(image_vector, dataset_vector)
+    for current_object in jsonArray:
+        similarity_score = similarity(image_vector['vektor'], current_object['vektor'])
         if similarity_score>0.60:
-            results.append({"image_index": i, "similarity_score": similarity_score})
+            results.append({"image_path": current_object['image_path'], "similarity_score": similarity_score})
+    results = similarity_sorting(results)
     with open("compare_result.json", 'w') as output_json_file:
         json.dump(results, output_json_file, indent=4)
+
+if __name__ == "__main__":
+    target_folder = "testing2"
+    dataset_to_json(cbir_dataset(target_folder))
+    image_path = "testing//0.jpg"
+    compare_and_write_results(image_path, "dataset_vektor.json")
