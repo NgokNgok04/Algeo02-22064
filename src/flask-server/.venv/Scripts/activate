@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="D:\Tubes_Algeo_2_lens\Algeo02-22064\src\flask-server\.venv"
+VIRTUAL_ENV="D:\Tubes-Algeo-2\Algeo02-22064\src\flask-server\.venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

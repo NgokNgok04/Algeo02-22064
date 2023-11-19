@@ -38,7 +38,7 @@ const DragAndDrop = () => {
   };
 
   return (
-    <div>
+    <div className='dragndrop'>
       <div class = "dropzone"
         onDragEnter={handleDragEnter}
         onDragLeave={handleDragLeave}
